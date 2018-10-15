@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.IOException;
+
 /**
  * 模拟登陆优酷
  *
@@ -12,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * @date 2018/10/01
  * */
 public class YouKuLogin {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         //指定chromedriver安装位置，注意：必须和chrome在同个目录下
         System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app/Contents/MacOS/chromedriver");
         //设置google浏览器选项
@@ -22,7 +24,7 @@ public class YouKuLogin {
         //创建chrome
         WebDriver driver = new ChromeDriver(chromeOptions);
 
-        // 使用它访问 Google
+        // 使用它访问youku
         driver.get("https://v.youku.com/v_show/id_XMzYxMDM4MzY3Ng==.html");
         Thread.sleep(2*1000);
 
@@ -40,7 +42,6 @@ public class YouKuLogin {
 
         // 检查页面标题
         System.out.println("Page title is: " + driver.getTitle());
-
 
         //退出浏览器
         driver.quit();
